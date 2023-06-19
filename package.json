@@ -1,0 +1,27 @@
+{
+  "name": "newgdaycare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CriistiianDM/newgdaycare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CriistiianDM/newgdaycare/issues"
+  },
+  "homepage": "https://github.com/CriistiianDM/newgdaycare#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.13.0",
+    "vite": "^4.3.9"
+  }
+}
