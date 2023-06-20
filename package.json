@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/CriistiianDM/newgdaycare#readme",
   "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0",

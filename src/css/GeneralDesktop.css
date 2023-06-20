@@ -1,0 +1,240 @@
+
+._header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(-webkit-fill-available - 4em);
+    height: 3em;
+    padding: 1.2em;
+    box-shadow: 0px 0px 10px 0px var(--color-box-shadow);
+}
+
+._img_container {
+    height: 4em;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+._img_container img {
+    height: 100%;
+    width: 9em;
+    object-fit: scale-down;
+}
+
+._header input {
+    all: unset;
+    width: 60%;
+    height: 3em;
+    padding-left: 2em;
+    border: 1px solid var(--color-radiu-primary);
+    border-radius: 5px;
+    font-family: var(--text-general-primary);
+    font-size: 20px;
+    color: var(--background-terciary-color);
+}
+
+._container_groups {
+    justify-self: center;
+    margin-top: 2em;
+    display: flex;
+    width: calc(100% - 2em);
+    height: -webkit-fill-available;
+    padding: 1em;
+}
+
+._container_groups
+section._group:first-child {
+    display: grid;
+    padding: 2em;
+    width: calc(60% - 2em);
+    height: -webkit-fill-available;
+}
+
+._container_groups
+section._group:last-child {
+    display: flex;
+    place-content: center;
+    width: 40%;
+}
+
+._container_groups
+section._group {
+   overflow: hidden;
+}
+
+._container_groups
+section._group:first-child 
+._title_sede {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    background: #f5f5f5;
+    height: 3em;
+    border-radius: 5px;
+}
+
+._container_groups
+section._group:first-child 
+._title_sede h1 {
+    color: var(--color-primary-background);
+    font-family: var(--text-general-primary);
+    text-align: center;
+    font-size: 30px;
+    font-family: 700;
+}
+
+
+._container_courses {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+._container_courses > 
+._course {
+   height: 18em;
+   width: 13em;
+   cursor: pointer;
+   overflow: hidden;
+}
+
+._container_courses > 
+._course:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px 0px var(--color-box-shadow);
+}
+
+._container_courses > 
+._course div._container_img_ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 100%;
+    overflow: hidden;
+}
+
+._container_courses > 
+._course div._container_img_ img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+._container_courses > 
+._course h1 {
+    text-align: center;
+    color: var(--color-primary-background);
+    font-family: var(--text-general-primary);
+    text-align: center;
+    font-size: 30px;
+    font-family: 700;
+}
+
+._container_courses > 
+._course ._actions {
+    display: grid;
+    place-content: center;
+}
+
+._table_stundent_course {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 40em;
+    border-radius: 3px;
+    border: 1px solid var(--color-background-off);
+    overflow: hidden;
+}
+
+._table_stundent_course 
+._title_list_estundent {
+    display: grid;
+    place-content: center;
+    width: calc(100% - 2em);
+    background: #d8d8d8;
+    padding: 1em;
+    height: 1.5em;
+}
+
+._table_stundent_course 
+._title_list_estundent h1 {
+    text-align: center;
+    color: var(--color-white);
+    font-family: var(--text-general-primary);
+    text-align: center;
+    font-size: 30px;
+    font-family: 700;
+}
+
+._container_student_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    width: calc(100%);
+    height: -webkit-fill-available;
+    /* padding: 1em; */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+._container_student_list 
+div._stundent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: calc(100% - 2em);
+    height: 2em;
+    padding: 1em;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+}
+
+._container_student_list 
+div._stundent:hover {
+    transition: all 0.3s linear;
+    background: #cecccc;
+}
+
+._container_student_list 
+div._stundent ._container_img_ {
+    height: 100%;
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    border: 1px solid var(--color-background-off);
+    overflow: hidden;
+}
+
+._container_student_list 
+div._stundent ._container_img_ img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+
+._container_student_list 
+div._stundent h1 {
+    text-align: end;
+    color: var(--color-primary-background);
+    font-family: var(--text-general-primary);
+    text-align: center;
+    font-size: 20px;
+    font-family: 700;
+}
+
+
+._container_profile_ {
+    display: grid;
+    width: calc(100% - 4em);
+    height: -webkit-fill-available;
+    padding: 2em;
+}

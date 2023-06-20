@@ -6,7 +6,9 @@ import {
     Route
 } from 'react-router-dom';
 
+//Import Components
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 export default function RenderApp() {
   return (
@@ -14,6 +16,7 @@ export default function RenderApp() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>

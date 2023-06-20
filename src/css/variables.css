@@ -1,0 +1,24 @@
+/*
+   Variables Css
+*/
+:root {
+    --color-primary-background: #351f95;
+    --color-background-off: #A1A1A1;
+    --background-generl-primary: #001019;
+    --color-blue-page-primary: rgba(28, 43, 50, 0.25);
+    --background-terciary-color: #203138;
+    --text-general-primary: 'Quicksand', sans-serif;
+    --color-rbga-primary: rgba(228, 57, 70, 0.46);
+    --color-red-primary: #E43946;
+    --color-background-product: rgba(28, 43, 50, 0.54);
+    --color-separate-line: #A5ABAE;
+    --color-white: #fff;
+    --color-bg-header: #0A1821;
+    --color-bg-menu-item: #E4394675;
+    --color-bg-img-product: #1D333D;
+    --color-bg-button-secondary: #740C18;
+    --color-bg-popup: #1D272C;
+    --color-bg-conatiner-primary: #69232E;
+    --color-box-shadow: rgba(0, 0, 0, 0.25);
+    --color-radiu-primary: rgb(84, 99, 214);
+}
