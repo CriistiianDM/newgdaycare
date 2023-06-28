@@ -1,1 +1,171 @@
-const _0x106e42=_0x2726;!function(e,$){let t=_0x2726,x=e();for(;;)try{let _=parseInt(t(378))/1*(parseInt(t(399))/2)+parseInt(t(366))/3*(parseInt(t(370))/4)+parseInt(t(390))/5*(parseInt(t(398))/6)+-parseInt(t(405))/7*(-parseInt(t(413))/8)+-parseInt(t(414))/9+-parseInt(t(386))/10*(parseInt(t(384))/11)+-parseInt(t(392))/12;if(611577===_)break;x.push(x.shift())}catch(n){x.push(x.shift())}}(_0x496a,611577);const pan_con_queso={queso:[{id:"AIzaSyB1YR"},{id:_0x106e42(415)},{id:"G-Qv82rRhWlqE"}],pan:[{id:"637920236611-"},{id:_0x106e42(412)},{id:_0x106e42(404)}]},CLIENT_ID=""+pan_con_queso.pan[_0x106e42(383)](e=>e.id)[_0x106e42(419)](""),API_KEY=""+pan_con_queso[_0x106e42(408)][_0x106e42(383)](e=>e.id)[_0x106e42(419)]("");function _0x2726(e,$){let t=_0x496a();return(_0x2726=function(e,$){return t[e-=361]})(e,$)}window.sessionStorage[_0x106e42(397)](_0x106e42(365),!1);const DISCOVERY_DOC=_0x106e42(416),SCOPES=_0x106e42(361);function _0x496a(){let e=["initTokenClient","118295mKPKpH","style","14254464sfhpIR","addEventListener","none","init","client","setItem","42pHPFXv","331706hJGpjp","result","getToken","signout_button","gapiLoaded",".apps.googleusercontent.com","1976485qjUYIs","Authorize","UNFORMATTED_VALUE","queso","sessionStorage","content","oauth2","gg7f17406ioeeae5mgbi4bm644q9trhe","24hMTmbB","1390221lNYhqC","3rgjnyxvK9KEIi5P","https://sheets.googleapis.com/$discovery/rest?version=v4","accounts","requestAccessToken","join","access_token","https://www.googleapis.com/auth/spreadsheets.readonly","spreadsheets","data","forEach","token","5421XrECQl","innerText","slice","Refresh","2404EGoDBN","getElementById","setToken","values","Error loading files","load","block","authorize_button","1DZkTkZ","revoke","stringify","1oC4CwQlHiR9JVoLPB3rVksrt12BHp4TxxrGN2GGOnZU","_auth_check_token","map","7348DOIUci","sheets","4650zYxwTD","display","DATA NG1"];return(_0x496a=function(){return e})()}let tokenClient,gapiInited=!1,gisInited=!1;function gapiLoaded(){gapi.load("client",initializeGapiClient)}async function initializeGapiClient(){let e=_0x106e42;await gapi[e(396)][e(395)]({apiKey:API_KEY,discoveryDocs:[DISCOVERY_DOC]}),gapiInited=!0,maybeEnableButtons()}function gisLoaded(){let e=_0x106e42;tokenClient=google.accounts[e(411)][e(389)]({client_id:CLIENT_ID,scope:SCOPES,callback:""}),gisInited=!0,maybeEnableButtons()}function maybeEnableButtons(){let e=_0x106e42;gapiInited&&gisInited&&(document[e(371)](e(377))[e(391)][e(387)]=e(376))}function handleAuthClick(){let e=_0x106e42;tokenClient.callback=async e=>{let $=_0x2726;if(void 0!==e.error)throw e;document[$(371)]("signout_button")[$(391)][$(387)]=$(376),document[$(371)]("authorize_button")[$(367)]=$(369),await listMajors()},null===gapi[e(396)][e(401)]()?tokenClient[e(418)]({prompt:"consent"}):tokenClient[e(418)]({prompt:""})}function handleSignoutClick(){let e=_0x106e42,$=gapi[e(396)][e(401)]();null!==$&&(google[e(417)][e(411)][e(379)]($[e(420)]),gapi[e(396)][e(372)](""),document[e(371)]("content")[e(367)]="",document[e(371)](e(377))[e(367)]=e(406),document.getElementById(e(402))[e(391)][e(387)]=e(394))}function addHeadings(e,$){let t=_0x106e42;return e[t(383)](e=>{let x={};return $[t(364)](($,t)=>{x[$]=e[t]}),x})}function normalizeString(e){return String(e||"").trim().toLowerCase()}function sheetValuesToObject(e,$){let t=_0x106e42,x=$||e[0][t(383)](normalizeString),_=null;e&&(_=$?e:e[t(368)](1));let n=addHeadings(_,x);return n}async function listMajors(){let e=_0x106e42,$;try{$=await gapi.client[e(385)][e(362)][e(373)].get({spreadsheetId:e(381),range:e(388),valueRenderOption:e(407)})}catch(t){document[e(371)](e(410))[e(367)]=e(374);return}let x=$[e(400)];window[e(409)].setItem(e(365),!0),window.sessionStorage[e(397)](e(363),JSON[e(380)](sheetValuesToObject(x[e(373)]))),document.getElementById(e(382)).click()}document[_0x106e42(371)](_0x106e42(403))[_0x106e42(393)]("load",gapiLoaded()),document[_0x106e42(371)]("gisLoaded")[_0x106e42(393)](_0x106e42(375),gisLoaded()),document[_0x106e42(371)](_0x106e42(377)).style.display="none",document[_0x106e42(371)]("signout_button")[_0x106e42(391)].display=_0x106e42(394);
+
+const pan_con_queso = {
+    "queso": [
+        { id: "AIzaSyB1YR" },
+        { id: "3rgjnyxvK9KEIi5P" },
+        { id: "G-Qv82rRhWlqE" }
+    ],
+    "pan": [
+        { id: "637920236611-" },
+        { id: "gg7f17406ioeeae5mgbi4bm644q9trhe" },
+        { id: ".apps.googleusercontent.com" }
+    ]
+}
+
+const CLIENT_ID = `${(pan_con_queso.pan).map((item) => item.id).join('')}`;
+const API_KEY = `${(pan_con_queso.queso).map((item) => item.id).join('')}`;
+
+//crear variable en session storage para guardar el token
+window.sessionStorage.setItem('token', false);
+
+// Discovery doc URL for APIs used by the quickstart
+const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+let tokenClient;
+let gapiInited = false;
+let gisInited = false;
+
+
+
+document.getElementById('gapiLoaded').addEventListener('load', gapiLoaded());
+document.getElementById('gisLoaded').addEventListener('load', gisLoaded());
+
+
+// document.getElementById('authorize_button').onclick = handleAuthClick;
+// document.getElementById('signout_button').onclick = handleSignoutClick;
+document.getElementById('authorize_button').style.display = 'none';
+document.getElementById('signout_button').style.display = 'none';
+
+/**
+ * Callback after api.js is loaded.
+ */
+function gapiLoaded() {
+  gapi.load('client', initializeGapiClient);
+}
+
+/**
+ * Callback after the API client is loaded. Loads the
+ * discovery doc to initialize the API.
+ */
+async function initializeGapiClient() {
+  await gapi.client.init({
+    apiKey: API_KEY,
+    discoveryDocs: [DISCOVERY_DOC],
+  });
+  gapiInited = true;
+  maybeEnableButtons();
+}
+
+/**
+ * Callback after Google Identity Services are loaded.
+ */
+function gisLoaded() {
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    callback: '', // defined later
+  });
+  gisInited = true;
+  maybeEnableButtons();
+}
+
+/**
+ * Enables user interaction after all libraries are loaded.
+ */
+function maybeEnableButtons() {
+  if (gapiInited && gisInited) {
+    document.getElementById('authorize_button').style.display = 'block';
+  }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick() {
+  tokenClient.callback = async (resp) => {
+    if (resp.error !== undefined) {
+      throw (resp);
+    }
+    document.getElementById('signout_button').style.display = 'block';
+    document.getElementById('authorize_button').innerText = 'Refresh';
+    await listMajors();
+  };
+
+  if (gapi.client.getToken() === null) {
+    // Prompt the user to select a Google Account and ask for consent to share their data
+    // when establishing a new session.
+    tokenClient.requestAccessToken({prompt: 'consent'});
+  } else {
+    // Skip display of account chooser and consent dialog for an existing session.
+    tokenClient.requestAccessToken({prompt: ''});
+  }
+
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick() {
+  const token = gapi.client.getToken();
+  if (token !== null) {
+    google.accounts.oauth2.revoke(token.access_token);
+    gapi.client.setToken('');
+    document.getElementById('content').innerText = '';
+    document.getElementById('authorize_button').innerText = 'Authorize';
+    document.getElementById('signout_button').style.display = 'none';
+  }
+}
+
+
+function addHeadings(people, headings) {
+    return people.map(personAsArray => {
+      const personAsObj = {};
+  
+      headings.forEach((heading, i) => {
+        personAsObj[heading] = personAsArray[i];
+      });
+  
+      return personAsObj;
+    });
+}
+
+function normalizeString(value) {
+    return String(value || '')
+      .trim()
+      .toLowerCase();
+}
+
+function sheetValuesToObject(sheetValues, headers) {
+    const headings = headers || sheetValues[0].map(normalizeString);
+    let people = null;
+    if (sheetValues) people = headers ? sheetValues : sheetValues.slice(1);
+    const peopleWithHeadings = addHeadings(people, headings);
+    return peopleWithHeadings;
+}
+
+async function listMajors() {
+  let response;
+  try {
+    // Fetch first 10 files
+    response = await gapi.client.sheets.spreadsheets.values.get({
+      spreadsheetId: '1oC4CwQlHiR9JVoLPB3rVksrt12BHp4TxxrGN2GGOnZU',
+      range: 'DATA NG1',
+      valueRenderOption: 'UNFORMATTED_VALUE',
+    });
+  } catch (err) {
+    document.getElementById('content').innerText = 'Error loading files';
+    return;
+  }
+  const range = response.result;
+
+   window.sessionStorage.setItem('token', true);
+   window.sessionStorage.setItem('data', JSON.stringify(sheetValuesToObject(range.values)));
+   document.getElementById('_auth_check_token').click();
+
+}
+
+
