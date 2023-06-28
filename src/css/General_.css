@@ -24,6 +24,19 @@ html,body {
     overflow: hidden;
 }
 
+h1,
+span,
+strong ,
+p {
+    font-family: var(--text-general-primary);
+    font-style: normal;
+    font-size: 20px;
+    font-family: 400;
+}
+
+strong {
+    font-weight: 800;
+}
 
 
 /*
