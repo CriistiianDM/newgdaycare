@@ -11,8 +11,20 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 
 export default function RenderApp() {
+
+  const [ islogged, setIslogged ] = React.useState(false);
+
+  const handleCheckToken = () => {
+      setIslogged(true);
+      const container_ = document.getElementById('container_login')
+      //add class
+      container_.classList.add('display_none')
+  }
+
   return (
     <>
+     {
+      islogged?
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,6 +32,12 @@ export default function RenderApp() {
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>
+      :
+      <button 
+           id='_auth_check_token'
+           style={{ visibility: 'hidden' }}
+           onClick={handleCheckToken}>Check Token</button>
+    }
     </>
   );
 }
