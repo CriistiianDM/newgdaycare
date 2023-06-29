@@ -7,7 +7,8 @@ const pan_con_queso = {
     ],
     "pan": [
         { id: "637920236611-" },
-        { id: "gg7f17406ioeeae5mgbi4bm644q9trhe" },
+        { id: "gg7f17406ioeea" },
+        { id: "e5mgbi4bm644q9trhe"},
         { id: ".apps.googleusercontent.com" }
     ]
 }
