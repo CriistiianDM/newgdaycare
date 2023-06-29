@@ -21,6 +21,19 @@ export default function RenderApp() {
       container_.classList.add('display_none')
   }
 
+  React.useEffect(() => {
+    
+    if (sessionStorage.getItem('token') === 'true') {
+      setIslogged(true);
+      const container_ = document.getElementById('container_login')
+      //add class
+      console.log(container_)
+      container_.classList.add('display_none')
+      console.log('token true')
+    }
+
+  }, [])
+
   return (
     <>
      {

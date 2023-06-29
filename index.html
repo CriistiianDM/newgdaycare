@@ -24,6 +24,10 @@
     </div>
     <script async defer src="https://apis.google.com/js/api.js" id="gapiLoaded"></script>
     <script async defer src="https://accounts.google.com/gsi/client" id="gisLoaded"></script>
-    <script async defer src="/src/backend/sheetsAPIQuickstart.js" ></script>
+    <script async defer>
+        var script = document.createElement('script');
+        script.src = "/src/backend/sheetsAPIQuickstart.js";
+        document.body.appendChild(script);
+    </script>
   </body>
 </html>
