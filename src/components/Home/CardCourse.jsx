@@ -3,10 +3,20 @@ import React from 'react';
 import { Button } from '@mui/material';
 
 const CardCourse = ({
-    data_courses
+    data_courses,
+    setDataSelect
 }) => {
 
     const [data, setData] = React.useState([]);
+
+    const handleViewStundents = (sede,classroom) => {
+        setDataSelect({
+            sede: sede,
+            homeroom: classroom
+        });
+        //subir el scroll
+        window.scrollTo(0, 0);
+    }
 
 
     React.useEffect(() => {
@@ -15,8 +25,9 @@ const CardCourse = ({
 
     return (
         <>
-            {data.map((group) => (
+            {data?.map((group , index__) => (
                         <React.Fragment key={group.id}>
+                        <div>
                             <div className='_title_sede'>
                                 <h1>{group.title}</h1>
                             </div>
@@ -33,11 +44,13 @@ const CardCourse = ({
                                                 backgroundColor: 'var(--color-radiu-primary)',
                                                 height: '3em',
                                             }}
+                                            onClick={() => handleViewStundents(index__,course.title)}
                                             variant="contained"> View Stundents</Button>
                                     </div>
                                 </div>
                             ))}
                             </div>
+                        </div>
                         </React.Fragment>
             ))}
         </>

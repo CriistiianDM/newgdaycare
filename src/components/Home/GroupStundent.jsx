@@ -3,46 +3,15 @@ import React from 'react';
 import { Button } from '@mui/material';
 import CardCourse from './CardCourse';
 import CardStudentList from './CardStudentList';
+import { getSedesCourses , getStundentsBySede } from '../../backend/RoutesGeneral';
 
-const data = [
-    {
-        id: 1,
-        title: 'NG 1',
-        courses: [
-            {
-                id: 1,
-                title: 'Course 1',
-                img: '/assets/course/1.png'
-            },
-            {
-                id: 2,
-                title: 'Course 2',
-                img: '/assets/course/2.png'
-            },
-            {
-                id: 3,
-                title: 'Course 3',
-                img: '/assets/course/3.png'
-            },
-            {
-                id: 4,
-                title: 'Course 4',
-                img: '/assets/course/4.png'
-            },
-            {
-                id: 5,
-                title: 'Course 5',
-                img: '/assets/course/5.png'
-            }
-        ]
-    }
-];
+
 
 
 //import components
 const GroupStundent = () => {
 
-    const [data_, setData] = React.useState({
+   const [data_, setData] = React.useState({
         title: '',
         stundents: [
             {
@@ -62,14 +31,33 @@ const GroupStundent = () => {
                 name: 'name 4 apellido 4',
                 img: '/assets/stundent/dafaul_profile.png'
             }
+        ],
+        data: [
+
         ]
-    });
+   });
+
+   const [dataSedes, setDataSedes] = React.useState([]);
+   const [dataSelect, setDataSelect] = React.useState({
+        sede: 0,
+        homeroom: 'NG1-Forest Land 1'
+   });
+
+   React.useEffect(() => {
+        setDataSedes(getSedesCourses());
+   }, []);
+
+
+   React.useEffect(() => {
+        setData(getStundentsBySede(dataSelect));
+   }, [dataSelect]);
 
    return (
         <>
             <main className='_container_groups'>
                 <section className='_group'>
-                    <CardCourse data_courses={data} />
+                    <CardCourse setDataSelect={setDataSelect} 
+                                data_courses={dataSedes} />
                 </section>
                 <section className='_group'>
                     <CardStudentList data_stundent={data_} />

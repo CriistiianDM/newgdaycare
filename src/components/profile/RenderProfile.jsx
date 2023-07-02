@@ -34,6 +34,26 @@ const RenderProfile = ({
     ]);
 
 
+    React.useEffect(() => {
+        console.log('data profile', window.sessionStorage.getItem('data_stundent'));
+        const data = window.sessionStorage.getItem('data_stundent');
+
+        if (window.sessionStorage.hasOwnProperty('data_stundent')) {
+            let data_ = JSON.parse(data);
+            setData({
+                sedePerteneciente: (data_.sede).slice(0, 3),
+                img_profile:  data_.img,
+                nombreUsuario: data_.name,
+                cursosAsignados: (data_.sede).slice(4, data_.sede.length),
+            });
+        }
+
+        //scroll to top
+        window.scrollTo(0, 0);
+
+    }, []);
+
+
     //render
     return (
         <>

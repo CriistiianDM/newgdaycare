@@ -13,7 +13,11 @@ const CardStudentList = ({
     });
     const navigate = useNavigate();
 
-    const handleViewStundent = () => {
+    const handleViewStundent = (data, title) => {
+
+        data.sede = title;
+        //crear variable global
+        sessionStorage.setItem('data_stundent', JSON.stringify(data));
         navigate('/profile');
     };
 
@@ -25,14 +29,17 @@ const CardStudentList = ({
         <>
             <div className='_table_stundent_course'>
                 <div className='_title_list_estundent'>
-                    <h1>List Stundent</h1>
+                    <h1>{ (data_.title !== '')? data_.title : 'List Stundent'}</h1>
                 </div>
                 <div className='_container_student_list'>
                     {
-                        data_.stundents.map((stundent) => (
-                            <div onClick={handleViewStundent} className='_stundent' key={stundent.name}>
+                        data_?.stundents.map((stundent) => (
+                            <div onClick={() => {handleViewStundent(stundent, data_.title)}} className='_stundent' key={stundent.name}>
                                 <div className='_container_img_'>
-                                    <img src={stundent.img} alt='_' />
+                                    <img onLoad={ (e) => {
+                                        console.log('cargando imagen');
+                                        console.log(e.target.complete);
+                                    }} src={stundent.img} alt='_' />
                                 </div>
                                 <h1>{stundent.name}</h1>
                             </div>

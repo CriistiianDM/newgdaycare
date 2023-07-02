@@ -107,6 +107,7 @@
 section._group:first-child {
     display: grid;
     padding: 2em;
+    gap: 3em;
     width: calc(60% - 2em);
     height: -webkit-fill-available;
 }
@@ -190,7 +191,7 @@ section._group:first-child
     color: var(--color-primary-background);
     font-family: var(--text-general-primary);
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 700;
 }
 
@@ -236,9 +237,9 @@ section._group:first-child
     flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
-    width: calc(100%);
+    width: calc(100% - 2em);
     height: -webkit-fill-available;
-    /* padding: 1em; */
+    padding: 1em;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -252,7 +253,7 @@ div._stundent {
     gap: 10px;
     width: calc(100% - 2em);
     height: 2em;
-    padding: 1em;
+    padding: 1.5em;
     cursor: pointer;
     user-select: none;
     overflow: hidden;
@@ -316,13 +317,12 @@ div._stundent h1 {
 }
 
 ._container_profile_data_ {
-    margin-top: 3em;
     display: flex;
     justify-content: space-between;
     width: calc(100% - 4em );
     height: auto;
     min-height: 10em;
-    padding: 2em;
+    padding: 1em 2em 0 2em;
 }
 
 ._container_info_personal {

@@ -160,16 +160,29 @@ async function listMajors() {
       range: 'DATA NG1',
       valueRenderOption: 'UNFORMATTED_VALUE',
     });
+
+    response2 = await gapi.client.sheets.spreadsheets.values.get({
+      spreadsheetId: '1oC4CwQlHiR9JVoLPB3rVksrt12BHp4TxxrGN2GGOnZU',
+      range: 'DATA NG2',
+      valueRenderOption: 'UNFORMATTED_VALUE',
+    });
+
   } catch (err) {
     document.getElementById('content').innerText = 'Error loading files';
     return;
   }
   const range = response.result;
+  const range2 = response2.result;
 
    window.sessionStorage.setItem('token', true);
-   window.sessionStorage.setItem('data', JSON.stringify(sheetValuesToObject(range.values)));
-   document.getElementById('_auth_check_token').click();
+   window.sessionStorage.setItem('data', JSON.stringify([
+    sheetValuesToObject(range.values),
+    sheetValuesToObject(range2.values)
+  ]));
+  document.getElementById('_auth_check_token').click();
+
   console.log('ummm ya');
+  
 }
 
 
