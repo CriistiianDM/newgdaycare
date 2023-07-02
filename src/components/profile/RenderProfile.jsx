@@ -35,7 +35,7 @@ const RenderProfile = ({
 
 
     React.useEffect(() => {
-        console.log('data profile', window.sessionStorage.getItem('data_stundent'));
+        
         const data = window.sessionStorage.getItem('data_stundent');
 
         if (window.sessionStorage.hasOwnProperty('data_stundent')) {

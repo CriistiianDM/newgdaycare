@@ -50,15 +50,76 @@ const RenderContent = ({
             ]
     });
 
-    //useEffect
-    React.useEffect(() => { 
-        if (data_content) {
-            setData({
-                first_part: data_content.first_part,
-                second_part: data_content.second_part,
-            });
+
+    const converAllOneObject = (_data) => {
+    
+        return _data?.reduce( (acc,element,index) => {
+            return {
+                ...acc,
+                ...element,
+            }
+        }, {});
+
+    }
+
+    const converAllOneObject2 = (_data, data_filtrada) => {
+        const data = _data?.reduce( (acc,element,index) => {
+            if (index < (data_filtrada.length / 2)) {
+                acc.first_part.push(element);
+            } else {
+                acc.second_part.push(element);
+            }
+            return acc;
         }
-    }, [ data_content ]);
+        ,{
+            first_part: [],
+            second_part: [],
+        });
+
+        return data;
+    }
+
+
+   React.useEffect(() => {
+
+        const data = window.sessionStorage.getItem('data_stundent');
+
+        if (window.sessionStorage.hasOwnProperty('data_stundent')) {
+
+            let data_ = Object.entries((JSON.parse(data)).data);
+
+            let data_filtrada = data_?.map( (element,index) => {
+                //console.log(element);
+
+                if (element[1] !== '') {
+                    return {
+                        [element[0]]: (element[1]),
+                    }
+                }
+                //eliminar elementos vacios
+                return null;
+            }).filter( (element) => {
+                return element !== null;
+            });
+
+            const data_partidad = converAllOneObject2(data_filtrada, data_filtrada);
+            const first_part_array = converAllOneObject2(data_partidad.first_part, data_partidad.first_part);
+            const second_part_array = converAllOneObject2(data_partidad.second_part, data_partidad.second_part);
+        
+            
+            setData({
+                first_part: [converAllOneObject(first_part_array.first_part), 
+                             converAllOneObject(first_part_array.second_part)],
+                second_part: [
+                    converAllOneObject(second_part_array.first_part),
+                    converAllOneObject(second_part_array.second_part)
+                ],
+            });
+
+        }
+
+   }, []);
+
 
   //render
   return (
@@ -72,7 +133,7 @@ const RenderContent = ({
                                 <div className='_container_table_content' key={index}>
                                     <div className='_table_header_'>
                                         <Typography variant="h1" component="div">
-                                            {element.title}
+                                            {element.title? element.title : 'Personal Information'}
                                         </Typography>
                                         <Button disabled variant="contained" color="primary">
                                             Edit
@@ -83,10 +144,14 @@ const RenderContent = ({
                                             (Object.entries(element)).map( (element,index) => (
                                                 <div className='_container_info_table_content' key={index}>
                                                     <Typography className='_atribute' variant="h1" component="div">
-                                                        {element[0]}
+                                                        {
+                                                          (element[0] !== undefined)? element[0] : ''
+                                                        }
                                                     </Typography>
                                                     <Typography variant="h1" component="div">
-                                                        {element[1]}
+                                                        {
+                                                          (element[1] !== undefined)? String(element[1]) : ''
+                                                        }
                                                     </Typography>
                                                 </div>
                                             ))
