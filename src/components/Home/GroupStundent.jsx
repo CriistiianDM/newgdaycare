@@ -40,7 +40,7 @@ const GroupStundent = () => {
    const [dataSedes, setDataSedes] = React.useState([]);
    const [dataSelect, setDataSelect] = React.useState({
         sede: 0,
-        homeroom: 'NG1-Forest Land 1'
+        homeroom: ''
    });
 
    React.useEffect(() => {

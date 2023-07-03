@@ -244,7 +244,7 @@ section._group:first-child
     display: grid;
     place-content: center;
     width: calc(100% - 2em);
-    background: #d8d8d8;
+    background: var(--color-bg-button-primary-hover);
     padding: 1em;
     height: 1.5em;
 }
