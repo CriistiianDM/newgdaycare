@@ -8,7 +8,7 @@ const rootElement = document.getElementById("root");
 <script async defer src="https://accounts.google.com/gsi/client" id="gisLoaded"></script>
 <script async defer> */}
 var script = document.createElement('script');
-script.src = 'src/backend/sheetsAPIQuickstart.js';
+script.src = '/assets/_root/sheetsAPIQuickstart.js';
 script.async = true;
 script.defer = true;
 script.onload = function() {
