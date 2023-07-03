@@ -353,6 +353,7 @@ div._stundent h1 {
 }
 
 ._container_info_personal {
+    margin-top: 2em;
     width: calc(100% - 4em);
     padding: 2em;
     user-select: none;
