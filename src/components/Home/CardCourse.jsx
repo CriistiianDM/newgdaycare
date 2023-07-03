@@ -39,8 +39,12 @@ const CardCourse = ({
                                     <div className='_actions'>
                                         <Button
                                             sx={{
-                                                backgroundColor: 'var(--color-radiu-primary)',
+                                                backgroundColor: 'var(--color-bg-button-primary)',
                                                 height: '3em',
+                                                color: 'var(--color-text-button-primary)',
+                                                ':hover': {
+                                                    backgroundColor: 'var(--color-bg-button-primary)',
+                                                }
                                             }}
                                             onClick={() => handleViewStundents(index__,course.title)}
                                             variant="contained"> View Stundents</Button>

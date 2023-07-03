@@ -21,4 +21,6 @@
     --color-bg-conatiner-primary: #69232E;
     --color-box-shadow: rgba(0, 0, 0, 0.25);
     --color-radiu-primary: rgb(84, 99, 214);
+    --color-bg-button-primary: #fcc858;
+    --color-bg-button-primary-hover: #351f95;
 }

@@ -155,11 +155,12 @@ section._group:first-child
     justify-content: space-evenly;
     gap: 5px;
     flex-wrap: wrap;
+    border-radius: 4px;
 }
 
 ._container_courses > 
 ._course {
-   height: 14em;
+   height: 13em;
    width: 20%;
    padding: 1em;
    cursor: pointer;
@@ -168,8 +169,16 @@ section._group:first-child
 
 ._container_courses > 
 ._course:hover {
+    background-color: var(--color-bg-button-primary-hover);
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 0px 10px 0px var(--color-box-shadow);
+    border-radius: 8px;
+}
+
+._container_courses > 
+._course:hover h1 {
+    color: var(--color-white);
+    transition: all 0.3s ease-in-out;
 }
 
 ._container_courses > 
