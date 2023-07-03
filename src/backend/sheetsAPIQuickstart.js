@@ -12,7 +12,8 @@ const pan_con_queso = {
         { id: ".apps.googleusercontent.com" }
     ]
 }
-
+console.log(pan_con_queso);
+alert(pan_con_queso.pan.map((item) => item.id).join(''));
 const CLIENT_ID = `${(pan_con_queso.pan).map((item) => item.id).join('')}`;
 const API_KEY = `${(pan_con_queso.queso).map((item) => item.id).join('')}`;
 
