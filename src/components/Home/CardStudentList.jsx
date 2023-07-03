@@ -25,6 +25,10 @@ const CardStudentList = ({
         setData_(data_stundent);
     }, [data_stundent]);
 
+    React.useEffect(() => {
+        console.log(sessionStorage.getItem('token'));
+    }, []);
+
     return (
         <>
             <div className='_table_stundent_course'>
@@ -36,10 +40,7 @@ const CardStudentList = ({
                         data_?.stundents.map((stundent) => (
                             <div onClick={() => {handleViewStundent(stundent, data_.title)}} className='_stundent' key={stundent.name}>
                                 <div className='_container_img_'>
-                                    <img onLoad={ (e) => {
-                                        console.log('cargando imagen');
-                                        console.log(e.target.complete);
-                                    }} src={stundent.img} alt='_' />
+                                    <img src={stundent.img} alt='_' />
                                 </div>
                                 <h1>{stundent.name}</h1>
                             </div>

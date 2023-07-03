@@ -12,16 +12,10 @@ const pan_con_queso = {
         { id: ".apps.googleusercontent.com" }
     ]
 }
-console.log(pan_con_queso);
-alert(pan_con_queso.pan.map((item) => item.id).join(''));
+
 const CLIENT_ID = `${(pan_con_queso.pan).map((item) => item.id).join('')}`;
 const API_KEY = `${(pan_con_queso.queso).map((item) => item.id).join('')}`;
 
-if ((window.sessionStorage.getItem('token') === false)) {
-    //crear variable en session storage para guardar el token
-    window.sessionStorage.setItem('token', false);
-    console.log('token creado');
-}
 
 // Discovery doc URL for APIs used by the quickstart
 const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
@@ -35,7 +29,7 @@ let gapiInited = false;
 let gisInited = false;
 
 
-
+window.sessionStorage.setItem('token', false);
 document.getElementById('gapiLoaded').addEventListener('load', gapiLoaded());
 document.getElementById('gisLoaded').addEventListener('load', gisLoaded());
 
@@ -153,6 +147,7 @@ function sheetValuesToObject(sheetValues, headers) {
 }
 
 async function listMajors() {
+  window.sessionStorage.setItem('token', false);
   let response;
   try {
     // Fetch first 10 files
@@ -172,6 +167,7 @@ async function listMajors() {
     document.getElementById('content').innerText = 'Error loading files';
     return;
   }
+
   const range = response.result;
   const range2 = response2.result;
 
@@ -180,9 +176,8 @@ async function listMajors() {
     sheetValuesToObject(range.values),
     sheetValuesToObject(range2.values)
   ]));
-  document.getElementById('_auth_check_token').click();
 
-  console.log('ummm ya');
+  document.getElementById('_auth_check_token').click();
   
 }
 

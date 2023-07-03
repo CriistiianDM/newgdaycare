@@ -1,7 +1,7 @@
 import React from 'react';
 
 //variable global
-const data_section = sessionStorage.getItem('data');
+let data_section = sessionStorage.getItem('data');
 const NAME_SEDE_KEY = 'homeroom';
 
 let regex = /^(\{.*\}|\[.*\])$/
@@ -19,7 +19,7 @@ const RoutesGeneral = () => {
 
 
 const getSedesCourses = () => {
-    
+      let data_section = sessionStorage.getItem('data');
       if (data_section && regex.test(data_section)) {
           let data_  = JSON.parse(data_section);
 
@@ -70,7 +70,7 @@ const getStundentsBySede = ({
 }) => {
 
   try {
-      
+      let data_section = sessionStorage.getItem('data');
       let data_  = JSON.parse(data_section);
       
       let data_general_stundents = data_[sede]?.filter((element_, index) => {
