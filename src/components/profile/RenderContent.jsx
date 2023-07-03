@@ -90,10 +90,11 @@ const RenderContent = ({
 
             let data_filtrada = data_?.map( (element,index) => {
                 //console.log(element);
+                const text_ = (element[0]).replace(/_/g, ' ');
 
                 if (element[1] !== '') {
                     return {
-                        [element[0]]: (element[1]),
+                        [text_]: (element[1]),
                     }
                 }
                 //eliminar elementos vacios

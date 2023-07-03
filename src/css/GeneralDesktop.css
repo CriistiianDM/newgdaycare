@@ -404,7 +404,7 @@ div._stundent h1 {
 }
 
 ._container_table_content {
-    width: 100%;
+    width: 94%;
     min-height: 10em;
     max-width: 39em;
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
@@ -441,7 +441,8 @@ div.MuiTypography-root.MuiTypography-h1 {
 ._container_info_table {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 4em);
+    width: 90%;
+    max-width: 95%;
     padding: 2.5em 2em 2.5em 2em;
     gap: 0.7em;
     overflow: hidden;
@@ -449,25 +450,32 @@ div.MuiTypography-root.MuiTypography-h1 {
 
 ._container_info_table
 div.MuiTypography-root.MuiTypography-h1._atribute {
-    font-size: 25px;
+    font-size: 20px;
     max-width: 40%;
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 ._container_info_table
 div.MuiTypography-root.MuiTypography-h1 {
     display: flex;
     justify-content: flex-start;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     text-align: left;
     width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 ._container_info_table_content {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    gap: 20px;
+    width: calc(100% - 20px);
     height: 100%;
 }
