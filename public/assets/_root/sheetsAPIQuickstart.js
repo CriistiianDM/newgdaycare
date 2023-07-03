@@ -28,8 +28,10 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
+if (!window.sessionStorage.hasOwnProperty('token')) {
+   window.sessionStorage.setItem('token', false);
+}
 
-window.sessionStorage.setItem('token', false);
 document.getElementById('gapiLoaded').addEventListener('load', gapiLoaded());
 document.getElementById('gisLoaded').addEventListener('load', gisLoaded());
 
@@ -147,7 +149,7 @@ function sheetValuesToObject(sheetValues, headers) {
 }
 
 async function listMajors() {
-  window.sessionStorage.setItem('token', false);
+  //window.sessionStorage.setItem('token', false);
   let response;
   try {
     // Fetch first 10 files

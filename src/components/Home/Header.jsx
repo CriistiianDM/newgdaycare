@@ -10,6 +10,7 @@ const Header = () => {
 
     return (
         <>
+            <div style={{height: '4em'}} />
             <header className='_header'>
                 <div onClick={ ()=> { navigate('/') }} className='_img_container'>
                   <img src='/assets/_root/logo.png' alt='_' />

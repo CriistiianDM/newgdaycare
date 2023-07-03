@@ -14,7 +14,6 @@ const CardStudentList = ({
     const navigate = useNavigate();
 
     const handleViewStundent = (data, title) => {
-
         data.sede = title;
         //crear variable global
         sessionStorage.setItem('data_stundent', JSON.stringify(data));
@@ -23,11 +22,11 @@ const CardStudentList = ({
 
     React.useEffect(() => {
         setData_(data_stundent);
+         //subir el scroll al inicio de ._container_student_list
+         const container = document.querySelector('._container_student_list');
+         container.scrollTop = 0;
     }, [data_stundent]);
 
-    React.useEffect(() => {
-        console.log(sessionStorage.getItem('token'));
-    }, []);
 
     return (
         <>

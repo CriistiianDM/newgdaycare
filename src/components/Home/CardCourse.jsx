@@ -14,8 +14,6 @@ const CardCourse = ({
             sede: sede,
             homeroom: classroom
         });
-        //subir el scroll
-        window.scrollTo(0, 0);
     }
 
 
