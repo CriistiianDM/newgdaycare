@@ -375,7 +375,15 @@ div._stundent h1 {
     object-fit: cover;
     overflow: hidden;
 }
-    
+   
+._container_profile_data_
+._profile_data_:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 ._container_profile_data_
 ._profile_data_:first-child h1 {
     font-size: 30px;
