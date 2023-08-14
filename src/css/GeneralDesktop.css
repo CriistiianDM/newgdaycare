@@ -249,6 +249,10 @@ section._group:first-child
     height: 1.5em;
 }
 
+._display_none {
+    display: none !important;
+}
+
 ._table_stundent_course 
 ._title_list_estundent h1 {
     text-align: center;
