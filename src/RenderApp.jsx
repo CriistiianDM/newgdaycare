@@ -5,14 +5,19 @@ import {
     Routes,
     Route
 } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import { getDataLoggued } from './backend/utils';
 
 //Import Components
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Login from './components/Home/Login';
+
 
 export default function RenderApp() {
 
   const [ islogged, setIslogged ] = React.useState(false);
+  const [ data, setData ] = React.useState({});
 
   const handleCheckToken = () => {
       setIslogged(true);
@@ -23,13 +28,25 @@ export default function RenderApp() {
 
   React.useEffect(() => {
     
-    if (sessionStorage.getItem('token') === 'true') {
-      setIslogged(true);
-      const container_ = document.getElementById('container_login')
-      //add class
-      console.log(container_)
-      container_.classList.add('display_none')
-      console.log('token true')
+    const token = Cookies.get('token');
+   
+    if (token) {
+
+      const permit = async () => {
+
+      const response = await getDataLoggued();
+
+        if (response) {
+          setIslogged(true);
+          const container_ = document.getElementById('container_login')
+          //add class
+          container_.classList.add('display_none')
+        }
+
+      }
+
+      permit();
+      
     }
 
   }, [])
@@ -46,10 +63,11 @@ export default function RenderApp() {
         </Routes>
       </Router>
       :
-      <button 
-           id='_auth_check_token'
-           style={{ visibility: 'hidden' }}
-           onClick={handleCheckToken}>Check Token</button>
+      <Login 
+        isLogin={islogged}
+        setIsLogin={setIslogged}
+        setData={setData}
+      />
     }
     </>
   );

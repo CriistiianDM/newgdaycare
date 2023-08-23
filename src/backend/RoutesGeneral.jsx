@@ -7,19 +7,19 @@ const NAME_SEDE_KEY = 'homeroom';
 let regex = /^(\{.*\}|\[.*\])$/
 if (!data_section && !regex.test(data_section)) {
     //alert('No se ha cargado la información de los estudiantes')
+    console.log('No se ha cargado la información de los estudiantes');
 }
 
 const RoutesGeneral = () => {
   return (
-    <div>
-      {/* Contenido del componente */}
-    </div>
+   <></>
   );
 };
 
 
 const getSedesCourses = () => {
       let data_section = sessionStorage.getItem('data');
+      console.log('data_section', data_section);
       if (data_section && regex.test(data_section)) {
           let data_  = JSON.parse(data_section);
 
@@ -27,6 +27,7 @@ const getSedesCourses = () => {
           let aux_data = '';
           let img_index = 0;
           let data_sede = data_?.map( (element,index) => {
+        
           return {
               id: index,
               title: `NG ${index + 1}`,

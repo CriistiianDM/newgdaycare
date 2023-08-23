@@ -1,10 +1,8 @@
 //import libraries
 import React from 'react';
-import { Button } from '@mui/material';
 import CardCourse from './CardCourse';
 import CardStudentList from './CardStudentList';
 import { getSedesCourses , getStundentsBySede } from '../../backend/RoutesGeneral';
-
 
 
 
@@ -44,7 +42,6 @@ const GroupStundent = () => {
    });
 
    React.useEffect(() => {
-        console.log('dataSedes', getSedesCourses());
         setDataSedes(getSedesCourses());
    }, []);
 
