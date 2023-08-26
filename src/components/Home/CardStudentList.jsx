@@ -19,13 +19,21 @@ const CardStudentList = ({
         //crear variable global
         sessionStorage.setItem('data_stundent', JSON.stringify(data));
         navigate('/profile');
+
     };
 
     React.useEffect(() => {
-        setData_(data_stundent);
-         //subir el scroll al inicio de ._container_student_list
-         const container = document.querySelector('._container_student_list');
-         container.scrollTop = 0;
+        console.log('data_stundent', data_stundent);
+        if (data_stundent !== undefined && 
+            data_stundent !== null      &&
+            data_stundent !== ''
+        ) {
+            setData_(data_stundent);
+            //subir el scroll al inicio de ._container_student_list
+            const container = document.querySelector('._container_student_list');
+            container.scrollTop = 0;
+        }
+
     }, [data_stundent]);
 
 

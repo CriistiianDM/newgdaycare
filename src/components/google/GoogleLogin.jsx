@@ -1,7 +1,7 @@
 import React from 'react';
 import { decodeToken } from "react-jwt";
 import Cookies from 'js-cookie';
-import { getData } from '../../backend/utils';
+import { getData , getDataLoggued } from '../../backend/utils';
 
 const _get_auth = async (setData, setInfo , loader) => {
     
@@ -52,6 +52,7 @@ const handleCredentialResponse = async ( response, setIsLogin, setData, loader )
          * !: Esto debe de ser un estado global, Mejorar otro dia.
         */
         const result = await getData('USERS');
+        const data = await getDataLoggued();
    
         if (have_permision({
             data: result.data,
@@ -62,8 +63,10 @@ const handleCredentialResponse = async ( response, setIsLogin, setData, loader )
                 decodeToken(response.credential), 
                 { expires: 5 }
             );
-            setIsLogin(true);
-            loader(false);
+            if (data) {
+                setIsLogin(true);
+                loader(false);
+            }
         }
         else {
             setIsLogin(false)

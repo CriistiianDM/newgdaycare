@@ -11,28 +11,8 @@ const GroupStundent = () => {
 
    const [data_, setData] = React.useState({
         title: '',
-        stundents: [
-            {
-                name: 'name 1 apellido 1',
-                img: '/assets/stundent/dafaul_profile.png'
-
-            },
-            {
-                name: 'name 2 apellido 2',
-                img: '/assets/stundent/dafaul_profile.png'
-            },
-            {
-                name: 'name 3 apellido 3',
-                img: '/assets/stundent/dafaul_profile.png'
-            },
-            {
-                name: 'name 4 apellido 4',
-                img: '/assets/stundent/dafaul_profile.png'
-            }
-        ],
-        data: [
-
-        ]
+        stundents: [],
+        data: []
    });
 
    const [dataSedes, setDataSedes] = React.useState([]);

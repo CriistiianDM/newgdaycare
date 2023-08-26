@@ -6,10 +6,9 @@ const NAME_SEDE_KEY = 'homeroom';
 
 let regex = /^(\{.*\}|\[.*\])$/
 if (!data_section && !regex.test(data_section)) {
-    //alert('No se ha cargado la información de los estudiantes')
     console.log('No se ha cargado la información de los estudiantes');
 }
-
+console.log('data_section', data_section);
 const RoutesGeneral = () => {
   return (
    <></>
@@ -22,7 +21,6 @@ const getSedesCourses = () => {
   
       if (data_section && regex.test(data_section)) {
           let data_  = JSON.parse(data_section);
-          console.log('data_', data_);
           //sacar los grupos de cada sede
           let aux_data = [];
           let img_index = 0;
@@ -32,11 +30,9 @@ const getSedesCourses = () => {
               id: index,
               title: `NG ${index + 1}`,
               courses: element?.filter((group, index, arr) => {
-                          //console.log('group', group);
-                          console.log('aux_data', aux_data !== group[NAME_SEDE_KEY]);
+                          
                           if (!aux_data.includes(group[NAME_SEDE_KEY]) &&
                               group[NAME_SEDE_KEY] !== '') {
-                            console.log('aux_data', aux_data , group[NAME_SEDE_KEY]);
                                 aux_data.push(group[NAME_SEDE_KEY]);
                                 return 1;
                           }

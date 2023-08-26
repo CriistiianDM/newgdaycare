@@ -30,20 +30,27 @@ const getData = async (hojaCalculo) => {
   
   
 const getDataLoggued = async () => {
+
+    try {
       const data_1 = await getData();
       const data_2 = await getData('DATA NG2');
      
-
       /**
         * !: Esto debe de ser un estado global, Mejorar otro dia.
       */
-      window.sessionStorage.setItem('data', JSON.stringify([
+      sessionStorage.setItem('data', JSON.stringify([
               data_1.data,
               data_2.data
       ]));
 
       return true;
-  
+      
+    }
+    catch (error) {
+        console.log('error', error);
+        return false;
+    }
+
 };
 
 export {
