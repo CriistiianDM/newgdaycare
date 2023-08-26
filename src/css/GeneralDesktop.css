@@ -232,11 +232,12 @@ section._group:first-child
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 32em;
+    height: calc(100vh - 130px);
     border-radius: 3px;
     background: var(--color-white);
     border: 1px solid var(--color-background-off);
     overflow: hidden;
+    z-index: 9999;
 }
 
 ._table_stundent_course 
@@ -247,6 +248,19 @@ section._group:first-child
     background: var(--color-bg-button-primary-hover);
     padding: 1em;
     height: 1.5em;
+}
+
+._table_stundent_course a {
+    font-size: 1em;
+    text-align: center;
+    background: var(--color-white);
+    color: var(--background-terciary-color);
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 40%;
+    margin: 10px 30%;
+    border: #cecccc 1px solid;
+    cursor: pointer;
 }
 
 ._display_none {
@@ -563,4 +577,46 @@ div.MuiTypography-root.MuiTypography-h1 {
 
 ._display-none {
     display: none !important;
+}
+
+._container_list_teacher {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+._container_list_teacher a {
+    all: unset;
+    margin: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-blue-page-primary);
+    cursor: pointer;
+}
+
+
+._container_list_teacher div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: calc(80vh - 1.5em);
+    background: var(--color-white);
+    border-radius: 15px;
+    padding: 1.5em;
+    z-index: 9999;
+}
+
+._container_list_teacher div table {
+    overflow: hidden;
+    height: 1em;
 }

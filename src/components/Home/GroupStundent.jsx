@@ -2,6 +2,7 @@
 import React from 'react';
 import CardCourse from './CardCourse';
 import CardStudentList from './CardStudentList';
+import ListTeacher from './ListTeacher';
 import { getSedesCourses , getStundentsBySede } from '../../backend/RoutesGeneral';
 
 
@@ -12,7 +13,8 @@ const GroupStundent = () => {
    const [data_, setData] = React.useState({
         title: '',
         stundents: [],
-        data: []
+        data: [],
+        dataTeacher: []
    });
 
    const [dataSedes, setDataSedes] = React.useState([]);

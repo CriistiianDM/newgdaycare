@@ -67,7 +67,27 @@ strong {
 
 
 
-
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-height: 15em;
+    overflow: auto;
+  }
+  
+  th,
+  td {
+    padding: 0.5em;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  th {
+    background-color: var(--color-bg-table);
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+  }
 
 
 

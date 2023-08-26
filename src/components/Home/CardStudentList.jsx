@@ -1,5 +1,6 @@
 //import libraries
 import React from 'react';
+import ListTeacher from './ListTeacher';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,8 +10,10 @@ const CardStudentList = ({
 
     const [data_, setData_] = React.useState({
         title: '',
-        stundents: []
+        stundents: [],
+        dataTeacher: []
     });
+    const [isActived, setIsActived] = React.useState(false);
     const navigate = useNavigate();
 
     const handleViewStundent = (data, title) => {
@@ -29,7 +32,7 @@ const CardStudentList = ({
             data_stundent !== '' &&
             data_stundent?.stundents.length > 0
         ) {
-            console.log('entro');
+            console.log('entro',data_stundent);
             setData_(data_stundent);
             //subir el scroll al inicio de ._container_student_list
             const container = document.querySelector('._container_student_list');
@@ -57,6 +60,16 @@ const CardStudentList = ({
                         ))
                     }
                 </div>
+                {
+                    (data_?.dataTeacher.length > 0) &&
+                    (<><a onClick={ ()=> {setIsActived(true)}}>Teachers</a> 
+                    { isActived &&
+                     <ListTeacher callback={ (tag) => { setIsActived(tag) }} 
+                                  ListTeacher={data_.dataTeacher}
+                     />
+                    }
+                    </>)
+                }
             </div>
         </>
     );

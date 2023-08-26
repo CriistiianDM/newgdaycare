@@ -1,3 +1,4 @@
+import { teal } from '@mui/material/colors';
 import React from 'react';
 
 //variable global
@@ -8,7 +9,7 @@ let regex = /^(\{.*\}|\[.*\])$/
 if (!data_section && !regex.test(data_section)) {
     console.log('No se ha cargado la información de los estudiantes');
 }
-console.log('data_section', data_section);
+
 const RoutesGeneral = () => {
   return (
    <></>
@@ -71,7 +72,9 @@ const getStundentsBySede = ({
 
   try {
       let data_section = sessionStorage.getItem('data');
+      let dataTeacher_section = sessionStorage.getItem('teachers');
       let data_  = JSON.parse(data_section);
+      let dataTeacher_  = JSON.parse(dataTeacher_section);
       
       let data_general_stundents = data_[sede]?.filter((element_, index) => {
             return element_[NAME_SEDE_KEY] === homeroom;
@@ -85,9 +88,16 @@ const getStundentsBySede = ({
             }
       })
 
+      let dataTeacher = dataTeacher_?.filter((element_, index) => {
+            return element_.classroom === homeroom;
+      })
+
+      console.log('data', dataTeacher_section);
+
       return {  
            stundents: data,
            title: homeroom, 
+           dataTeacher: dataTeacher
       };
 
   }

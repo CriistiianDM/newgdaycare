@@ -34,6 +34,7 @@ const getDataLoggued = async () => {
     try {
       const data_1 = await getData();
       const data_2 = await getData('DATA NG2');
+      const teachers = await getData('TEACHERS');
      
       /**
         * !: Esto debe de ser un estado global, Mejorar otro dia.
@@ -43,8 +44,12 @@ const getDataLoggued = async () => {
               data_2.data
       ]));
 
+      sessionStorage.setItem('teachers', JSON.stringify((teachers.data)?.filter( (item) => {
+        return item['classroom'] !== '' && item['classroom'] !== undefined
+      })));
+
       return true;
-      
+
     }
     catch (error) {
         console.log('error', error);
