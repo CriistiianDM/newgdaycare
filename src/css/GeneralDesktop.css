@@ -560,3 +560,7 @@ div.MuiTypography-root.MuiTypography-h1 {
     width: 100%;
     object-fit: cover;
 }
+
+._display-none {
+    display: none !important;
+}

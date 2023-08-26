@@ -66,7 +66,7 @@ const getSedesCourses = () => {
 
 const getStundentsBySede = ({
   sede = 0,
-  homeroom = 'NG1-Forest Land 1'
+  homeroom = ''
 }) => {
 
   try {

@@ -22,7 +22,6 @@ const GroupStundent = () => {
    });
 
    React.useEffect(() => {
-        console.log('dataSedes', getSedesCourses());
         setDataSedes(getSedesCourses());
    }, []);
 
@@ -38,7 +37,7 @@ const GroupStundent = () => {
                     <CardCourse setDataSelect={setDataSelect} 
                                 data_courses={dataSedes} />
                 </section>
-                <section className='_group'>
+                <section id="list-html" className='_group _display-none'>
                     <CardStudentList data_stundent={data_} />
                 </section>
             </main>
