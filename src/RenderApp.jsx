@@ -14,17 +14,31 @@ import Profile from './pages/Profile';
 import Login from './components/Home/Login';
 
 
+const RenderRoutes = () => {
+     return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<><h1>No Found Route</h1></>} />
+        </Routes>
+      </Router>
+     )
+}
+
+
 export default function RenderApp() {
 
   const [ islogged, setIslogged ] = React.useState(false);
   const [ data, setData ] = React.useState({});
+  const [ isLoad, setIsLoad ] = React.useState(true);
 
-  const handleCheckToken = () => {
-      setIslogged(true);
-      const container_ = document.getElementById('container_login')
-      //add class
-      container_.classList.add('display_none')
-  }
+
+  React.useEffect(() => {
+    console.log('data', isLoad);
+    console.log('data', 'aaaaaa');
+  }, [isLoad])
+
 
   React.useEffect(() => {
     
@@ -35,9 +49,10 @@ export default function RenderApp() {
       const permit = async () => {
 
       const response = await getDataLoggued();
-
+        setIsLoad(true);
         if (response) {
           setIslogged(true);
+          setIsLoad(false);
           const container_ = document.getElementById('container_login')
           //add class
           container_.classList.add('display_none')
@@ -48,27 +63,26 @@ export default function RenderApp() {
       permit();
       
     }
+    else {
+      setIsLoad(false);
+    }
 
   }, [])
 
   return (
     <>
-     {
-      islogged?
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<><h1>No Found Route</h1></>} />
-        </Routes>
-      </Router>
-      :
-      <Login 
-        isLogin={islogged}
-        setIsLogin={setIslogged}
-        setData={setData}
-      />
-    }
+        {
+          islogged && !isLoad ? (
+            <RenderRoutes />
+          ) : isLoad ? (
+            <div className="container_loader">
+              <span className="loader"></span>
+            </div>
+          ) : (
+            <Login setIsLoad={setIsLoad} isLogin={islogged} 
+                   setIsLogin={setIslogged} setData={setData} />
+          )
+        }
     </>
   );
 }

@@ -5,7 +5,8 @@ import GoogleLogin from '../google/GoogleLogin';
 function Login({
     isLogin,
     setIsLogin,
-    setData
+    setData,
+    setIsLoad
 }) {
   return (
      <>
@@ -13,6 +14,7 @@ function Login({
                 isLogin={isLogin}
                 setIsLogin={setIsLogin}
                 setData={setData}
+                setIsLoad={setIsLoad}
         />
         <div id="container_login" className="_conatiner_login">
         <div className="_logo_google">

@@ -253,6 +253,20 @@ section._group:first-child
     display: none !important;
 }
 
+
+.container_loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    overflow: hidden;
+}
+
 ._table_stundent_course 
 ._title_list_estundent h1 {
     text-align: center;

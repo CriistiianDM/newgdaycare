@@ -1,16 +1,15 @@
 import React from 'react';
 import { decodeToken } from "react-jwt";
 import Cookies from 'js-cookie';
-import { getDataLoggued } from '../../backend/utils';
+import { getData } from '../../backend/utils';
 
-const _get_auth = async (setData, setInfo) => {
+const _get_auth = async (setData, setInfo , loader) => {
     
         try {
             // console.log('google', google);
             google.accounts.id.initialize({
             client_id: '637920236611-gg7f17406ioeeae5mgbi4bm644q9trhe.apps.googleusercontent.com',
-            callback: (response) => handleCredentialResponse(response, setData, setInfo),
-            })
+            callback: (response) => handleCredentialResponse( response,  setData, setInfo, loader)})
 
             google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
@@ -33,8 +32,8 @@ const have_permision = ({
 }) => {
 
     const result = (data)?.filter( (item) => {
-        console.log(item['correo_electrónico'] === dataToken['email'] , dataToken['email'] , 'data');
-        return item['correo_electrónico'] === dataToken['email']
+        console.log(item['email'] === dataToken['email'] , dataToken['email'] , 'data');
+        return item['email'] === dataToken['email']
     })
 
     return {
@@ -45,22 +44,33 @@ const have_permision = ({
 }
 
 
-const handleCredentialResponse = async (response, setIsLogin, setData) => {
+const handleCredentialResponse = async ( response, setIsLogin, setData, loader ) => {
 
     try {
-
-        Cookies.set('token', 
-                    decodeToken(response.credential), 
-                    { expires: 5 }
-        );
-
+        loader(true);
+        
         /**
          * !: Esto debe de ser un estado global, Mejorar otro dia.
         */
-        const result = await getDataLoggued();
-     
-        if (result) {
+        const result = await getData('USERS');
+   
+        if (have_permision({
+            data: result.data,
+            dataToken: decodeToken(response.credential)
+            }).result
+        ) {
+            Cookies.set('token', 
+                decodeToken(response.credential), 
+                { expires: 5 }
+            );
             setIsLogin(true);
+            loader(false);
+        }
+        else {
+            setIsLogin(false)
+            loader(false);
+            alert('No tienes permiso para acceder');
+
         }
 
     }
@@ -73,7 +83,8 @@ const handleCredentialResponse = async (response, setIsLogin, setData) => {
 const GoogleLogin = ({
     isLogin,
     setIsLogin,
-    setData
+    setData,
+    setIsLoad
 }) => {
 
     const _root = document.getElementById('_body');
@@ -94,7 +105,7 @@ const GoogleLogin = ({
 
     //saber si el script se cargo
     _script.onload = () => {
-        _get_auth(setIsLogin, setData);
+        _get_auth(setIsLogin, setData , setIsLoad);
     };
 
 
