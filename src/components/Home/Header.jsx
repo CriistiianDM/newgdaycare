@@ -22,7 +22,15 @@ const Header = () => {
         const find = data_.filter( (element) => {
             //expression regular para buscar coincidencias
             const regex = new RegExp( (e.target.value).toLowerCase() , 'gi');
+
+            if (element.fullname === undefined ||
+                element.fullname === null ||
+                element.fullname === '') {
+                return false;
+            }
+
             return ((element.fullname).toLowerCase()).match(regex);
+            
         });
 
         if (e.target.value === '') {
