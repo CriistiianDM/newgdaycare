@@ -15,7 +15,7 @@ const CardStudentList = ({
 
     const handleViewStundent = (data, title) => {
         data.sede = title;
-        console.log('data', data);
+
         //crear variable global
         sessionStorage.setItem('data_stundent', JSON.stringify(data));
         navigate('/profile');

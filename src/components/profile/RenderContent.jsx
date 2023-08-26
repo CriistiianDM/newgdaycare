@@ -89,7 +89,7 @@ const RenderContent = ({
             let data_ = Object.entries((JSON.parse(data)).data);
 
             let data_filtrada = data_?.map( (element,index) => {
-                //console.log(element);
+                
                 const text_ = (element[0]).replace(/_/g, ' ');
 
                 if (element[1] !== '') {

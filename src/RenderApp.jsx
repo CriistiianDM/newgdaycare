@@ -35,12 +35,6 @@ export default function RenderApp() {
 
 
   React.useEffect(() => {
-    console.log('data', isLoad);
-    console.log('data', 'aaaaaa');
-  }, [isLoad])
-
-
-  React.useEffect(() => {
     
     const token = Cookies.get('token');
    

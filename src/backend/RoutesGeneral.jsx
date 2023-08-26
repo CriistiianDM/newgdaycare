@@ -19,12 +19,12 @@ const RoutesGeneral = () => {
 
 const getSedesCourses = () => {
       let data_section = sessionStorage.getItem('data');
-      console.log('data_section', data_section);
+  
       if (data_section && regex.test(data_section)) {
           let data_  = JSON.parse(data_section);
-
+          console.log('data_', data_);
           //sacar los grupos de cada sede
-          let aux_data = '';
+          let aux_data = [];
           let img_index = 0;
           let data_sede = data_?.map( (element,index) => {
         
@@ -32,9 +32,12 @@ const getSedesCourses = () => {
               id: index,
               title: `NG ${index + 1}`,
               courses: element?.filter((group, index, arr) => {
-
-                          if (aux_data !== group[NAME_SEDE_KEY]) {
-                                aux_data = group[NAME_SEDE_KEY];
+                          //console.log('group', group);
+                          console.log('aux_data', aux_data !== group[NAME_SEDE_KEY]);
+                          if (!aux_data.includes(group[NAME_SEDE_KEY]) &&
+                              group[NAME_SEDE_KEY] !== '') {
+                            console.log('aux_data', aux_data , group[NAME_SEDE_KEY]);
+                                aux_data.push(group[NAME_SEDE_KEY]);
                                 return 1;
                           }
 

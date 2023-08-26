@@ -42,6 +42,7 @@ const GroupStundent = () => {
    });
 
    React.useEffect(() => {
+        console.log('dataSedes', getSedesCourses());
         setDataSedes(getSedesCourses());
    }, []);
 

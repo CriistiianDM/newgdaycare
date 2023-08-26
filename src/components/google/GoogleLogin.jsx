@@ -32,7 +32,6 @@ const have_permision = ({
 }) => {
 
     const result = (data)?.filter( (item) => {
-        console.log(item['email'] === dataToken['email'] , dataToken['email'] , 'data');
         return item['email'] === dataToken['email']
     })
 
@@ -48,7 +47,7 @@ const handleCredentialResponse = async ( response, setIsLogin, setData, loader )
 
     try {
         loader(true);
-        
+
         /**
          * !: Esto debe de ser un estado global, Mejorar otro dia.
         */
