@@ -225,18 +225,17 @@ section._group:first-child
 }
 
 ._table_stundent_course {
-    margin-top: 2em;
+    margin-top: 3.8em;
     position: fixed;
     right: 3em;
     top: 4em;
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 170px);
     border-radius: 3px;
     background: var(--color-white);
     border: 1px solid var(--color-background-off);
-    overflow: hidden;
     z-index: 9999;
 }
 
@@ -262,6 +261,11 @@ section._group:first-child
     border: #cecccc 1px solid;
     cursor: pointer;
 }
+
+._table_stundent_course > a {
+    position: absolute;
+    top: -2em;
+} 
 
 ._display_none {
     display: none !important;
@@ -427,6 +431,11 @@ div._stundent h1 {
     max-width: 400px;
 }
 
+._profile_data_:first-child h1:last-child {
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
 ._container_profile_data_
 ._profile_data_:last-child h1 {
     font-size: 20px;
@@ -590,7 +599,7 @@ div.MuiTypography-root.MuiTypography-h1 {
     overflow: hidden;
 }
 
-._container_list_teacher a {
+._container_list_teacher > a:first-child {
     all: unset;
     margin: unset;
     position: absolute;
@@ -603,20 +612,25 @@ div.MuiTypography-root.MuiTypography-h1 {
     cursor: pointer;
 }
 
-
-._container_list_teacher div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60vw;
-    height: calc(80vh - 1.5em);
+._container_list_teacher div[data-table="true"] {
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 50vw;
+    height: calc(60vh - 1.5em);
     background: var(--color-white);
     border-radius: 15px;
     padding: 1.5em;
     z-index: 9999;
 }
 
-._container_list_teacher div table {
-    overflow: hidden;
-    height: 1em;
+
+._container_list_teacher div[data-table="true"] a {
+    all: unset;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-family: var(--text-general-primary);
+    font-size: 1em;
+    cursor: pointer;
 }

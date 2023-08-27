@@ -26,7 +26,9 @@ const ListTeacher  = ({
     <>
        <section className="_container_list_teacher">
             <a onClick={closeModal} className='_close_modal' />
-            <div>
+            <div data-table="true">
+                <h1>Teachers</h1>
+                <a onClick={closeModal} className='_close-modal'>X</a>
                 <Table 
                     data_header={["firtname", "lastname", "date_ini", "lessons" , "cpr","classroom"]}
                     data_cell={["firtname", "lastname", "date_ini", "lessons" , "cpr","classroom"]}
