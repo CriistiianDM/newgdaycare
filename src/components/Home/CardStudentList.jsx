@@ -44,7 +44,17 @@ const CardStudentList = ({
 
     return (
         <>
-            <div className='_table_stundent_course'>
+            {
+              (data_?.dataTeacher.length > 0) &&
+                    (<><a className='_event-teacher' onClick={ ()=> {setIsActived(true)}}>Teachers</a> 
+                    { isActived &&
+                     <ListTeacher callback={ (tag) => { setIsActived(tag) }} 
+                                  ListTeacher={data_.dataTeacher}
+                     />
+                    }
+             </>)
+            }
+            <div className='_table_stundent_course _display-none'  id="list-html">
                 <div className='_title_list_estundent'>
                     <h1>{ (data_.title !== '')? data_.title : 'List Stundent'}</h1>
                 </div>
@@ -60,16 +70,6 @@ const CardStudentList = ({
                         ))
                     }
                 </div>
-                {
-                    (data_?.dataTeacher.length > 0) &&
-                    (<><a onClick={ ()=> {setIsActived(true)}}>Teachers</a> 
-                    { isActived &&
-                     <ListTeacher callback={ (tag) => { setIsActived(tag) }} 
-                                  ListTeacher={data_.dataTeacher}
-                     />
-                    }
-                    </>)
-                }
             </div>
         </>
     );

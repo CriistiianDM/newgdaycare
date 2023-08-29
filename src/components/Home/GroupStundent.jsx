@@ -39,7 +39,7 @@ const GroupStundent = () => {
                     <CardCourse setDataSelect={setDataSelect} 
                                 data_courses={dataSedes} />
                 </section>
-                <section id="list-html" className='_group _display-none'>
+                <section className='_group'>
                     <CardStudentList data_stundent={data_} />
                 </section>
             </main>

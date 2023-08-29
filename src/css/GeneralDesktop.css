@@ -120,6 +120,7 @@ section._group:last-child {
     display: flex;
     place-content: center;
     width: 40%;
+    z-index: 9999;
 }
 
 ._container_groups
@@ -225,7 +226,7 @@ section._group:first-child
 }
 
 ._table_stundent_course {
-    margin-top: 3.8em;
+    margin-top: 4.1em;
     position: fixed;
     right: 3em;
     top: 4em;
@@ -597,6 +598,7 @@ div.MuiTypography-root.MuiTypography-h1 {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 99999;
 }
 
 ._container_list_teacher > a:first-child {
@@ -633,4 +635,20 @@ div.MuiTypography-root.MuiTypography-h1 {
     font-family: var(--text-general-primary);
     font-size: 1em;
     cursor: pointer;
+}
+
+._event-teacher {
+    all: unset;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    height: 2em;
+    width: 8em;
+    font-family: var(--text-general-primary);
+    font-size: 1em;
+    background: var(--color-white);
+    border-radius: 5px;
+    border: 1px solid var(--color-background-off);
+    cursor: pointer;
+    z-index: 99999;
 }

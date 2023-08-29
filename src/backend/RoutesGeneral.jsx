@@ -88,16 +88,11 @@ const getStundentsBySede = ({
             }
       })
 
-      let dataTeacher = dataTeacher_?.filter((element_, index) => {
-            return element_.classroom === homeroom;
-      })
-
-      console.log('data', dataTeacher_section);
 
       return {  
            stundents: data,
            title: homeroom, 
-           dataTeacher: dataTeacher
+           dataTeacher: dataTeacher_
       };
 
   }
