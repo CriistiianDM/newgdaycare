@@ -120,7 +120,7 @@ section._group:last-child {
     display: flex;
     place-content: center;
     width: 40%;
-    z-index: 9999;
+    z-index: 99;
 }
 
 ._container_groups

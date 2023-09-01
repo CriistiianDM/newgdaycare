@@ -83,7 +83,7 @@ const getStundentsBySede = ({
       let data = data_general_stundents?.map((element_, index) => {
             return {
                 name: `${element_.first_name} ${element_.last_name}`,
-                img: element_.photo,
+                img: element_.photo ? element_.photo : '',
                 data: element_
             }
       })

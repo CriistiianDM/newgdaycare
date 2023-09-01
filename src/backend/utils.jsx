@@ -32,16 +32,56 @@ const getData = async (hojaCalculo) => {
 const getDataLoggued = async () => {
 
     try {
-      const data_1 = await getData();
-      const data_2 = await getData('DATA NG2');
+      const data_1 = await getData('Full DATA');
       const teachers = await getData('TEACHERS');
+
+      data_1.data = data_1.data.map ((item) => {
+          item.fullname = `${item.first_name} ${item.last_name}`;
+          return item;
+      });
+
+      const data_ = [
+        [...data_1.data.filter((item) => {
+          const regex = /^NG1/g;
+          return regex.test(item['homeroom'])
+        })],
+        [...data_1.data.filter((item) => {
+          const regex = /^NG2/g;
+          return regex.test(item['homeroom'])
+        })],
+      ]
+
+      console.log('data_', data_);
+
+
+      // const sedesDiferents = data_1.data?.reduce((a,b) => {
+      //    console.log('a', a , 'b', b);
+      //    //solo coger los 3 primeros caracteres
+      //    const firts_caracter = b['homeroom'].substring(0, 3);
+      //    console.log('firts_caracter', firts_caracter);
+        
+      //    //por cada NG1 NUEVO GRUPO 1
+      //     if (!data_.includes(firts_caracter)) {
+      //         data_.push(firts_caracter);
+
+      //         return {
+      //           [firts_caracter]: [...b, firts_caracter],
+      //           dataCom: [...a.dataCom, firts_caracter],
+      //         }
+
+      //     }
+          
+
+      // }, { dataCom: [] , init: (data_1.data[0])['homeroom']});
+
+      //console.log('data_full', data_1.data ,  sedesDiferents);
      
       /**
         * !: Esto debe de ser un estado global, Mejorar otro dia.
       */
       sessionStorage.setItem('data', JSON.stringify([
-              data_1.data,
-              data_2.data
+        data_[0],
+        data_[1]
       ]));
 
       sessionStorage.setItem('teachers', JSON.stringify((teachers.data)?.filter( (item) => {

@@ -26,13 +26,13 @@ const CardStudentList = ({
     };
 
     React.useEffect(() => {
-        
+     
         if (data_stundent !== undefined && 
             data_stundent !== null      &&
             data_stundent !== '' &&
             data_stundent?.stundents.length > 0
         ) {
-            console.log('entro',data_stundent);
+            
             setData_(data_stundent);
             //subir el scroll al inicio de ._container_student_list
             const container = document.querySelector('._container_student_list');
