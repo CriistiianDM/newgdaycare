@@ -423,7 +423,7 @@ div._stundent h1 {
 }
 
 ._container_profile_data_
-._profile_data_:first-child h1 {
+._profile_data_:first-child > div h1:first-child {
     font-size: 30px;
     text-transform: capitalize;
     white-space: nowrap;
@@ -432,9 +432,12 @@ div._stundent h1 {
     max-width: 400px;
 }
 
-._profile_data_:first-child h1:last-child {
+._profile_data_:first-child h1 { 
     font-size: 20px;
     text-transform: lowercase;
+    font-weight: 300;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
 }
 
 ._container_profile_data_

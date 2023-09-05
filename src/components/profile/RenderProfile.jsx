@@ -40,13 +40,19 @@ const RenderProfile = ({
         
         if (window.sessionStorage.hasOwnProperty('data_stundent')) {
             let data_ = JSON.parse(data);
-            console.log('data_', data_);
+            let pickavd  = ['No Have Pickavd']
+
+            if ((data_.data)?.all_pickup) {
+                pickavd = (data_.data)?.all_pickup?.split(',');
+            }
+
+            console.log('data_ 45', data_);
             setData({
                 sedePerteneciente: (data_.sede).slice(0, 3),
                 img_profile:  data_.img,
                 nombreUsuario: data_.name,
                 cursosAsignados: (data_.sede).slice(4, data_.sede.length),
-                aprovadeUser: `${data_.data.approved_pickup_1_first_name} ${data_.data.approved_pickup_1_last_name}`
+                aprovadeUser: pickavd
             });
         }
 
@@ -65,7 +71,10 @@ const RenderProfile = ({
                         <img  className="profile" src={data.img_profile} alt="profile" />
                         <div>
                             <h1>{data.nombreUsuario}</h1>
-                            <h1>{data.aprovadeUser}</h1>
+                            {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => (
+                                <h1 key={index}>{item}</h1>
+                            ))
+                            }
                         </div>
                     </div>
                     <div className='_profile_data_'>

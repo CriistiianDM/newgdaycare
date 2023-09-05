@@ -32,9 +32,9 @@ const getData = async (hojaCalculo) => {
 const getDataLoggued = async () => {
 
     try {
-      const data_1 = await getData('Full DATA');
+      const data_1 = await getData(`Full DATA`);
       const teachers = await getData('TEACHERS');
-
+     
       data_1.data = data_1.data.map ((item) => {
           item.fullname = `${item.first_name} ${item.last_name}`;
           return item;
@@ -50,9 +50,6 @@ const getDataLoggued = async () => {
           return regex.test(item['homeroom'])
         })],
       ]
-
-      console.log('data_', data_);
-
 
       // const sedesDiferents = data_1.data?.reduce((a,b) => {
       //    console.log('a', a , 'b', b);

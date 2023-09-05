@@ -75,7 +75,7 @@ const getStundentsBySede = ({
       let dataTeacher_section = sessionStorage.getItem('teachers');
       let data_  = JSON.parse(data_section);
       let dataTeacher_  = JSON.parse(dataTeacher_section);
-      
+     
       let data_general_stundents = data_[sede]?.filter((element_, index) => {
             return element_[NAME_SEDE_KEY] === homeroom;
       })
@@ -98,10 +98,9 @@ const getStundentsBySede = ({
   }
   catch (error) {
        console.log(error);
- }
+  }
 
 }
-//getStundentsBySede({})
 
 const getHeadquarters = () => {
 
@@ -115,7 +114,7 @@ const getHeadquarters = () => {
 }
 
 export default RoutesGeneral;
-export { getHeadquarters 
-        , getSedesCourses
-        , getStundentsBySede
+export { getHeadquarters, 
+         getSedesCourses,
+         getStundentsBySede
 };
