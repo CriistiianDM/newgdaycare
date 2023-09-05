@@ -15,6 +15,7 @@ const RenderProfile = ({
         img_profile:  '',
         nombreUsuario: '',
         cursosAsignados: '',
+        aprovadeUser: ['No Have Pickavd']
     });
 
 
@@ -41,9 +42,15 @@ const RenderProfile = ({
         if (window.sessionStorage.hasOwnProperty('data_stundent')) {
             let data_ = JSON.parse(data);
             let pickavd  = ['No Have Pickavd']
-
+            console.log('data_ 45', data_ , (data_.data)?.all_pickup);
             if ((data_.data)?.all_pickup) {
                 pickavd = (data_.data)?.all_pickup?.split(',');
+                console.log('data_ 555545', pickavd , 'a' );
+                
+                if (pickavd.join('').replace(/\s/g, '') === '')  {
+                 console.log('da33355545', pickavd);
+                 pickavd = ['No Have Pickavd']
+                }
             }
 
             console.log('data_ 45', data_);
