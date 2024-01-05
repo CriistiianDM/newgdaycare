@@ -45,11 +45,9 @@ const RenderProfile = ({
             console.log('data_ 45', data_ , (data_.data)?.all_pickup);
             if ((data_.data)?.all_pickup) {
                 pickavd = (data_.data)?.all_pickup?.split(',');
-                console.log('data_ 555545', pickavd , 'a' );
-                
+                coo
                 if (pickavd.join('').replace(/\s/g, '') === '')  {
-                 console.log('da33355545', pickavd);
-                 pickavd = ['No Have Pickavd']
+                   pickavd = ['No Have Pickavd']
                 }
             }
 
@@ -78,7 +76,7 @@ const RenderProfile = ({
                         <div>
                             <h1>{data.nombreUsuario}</h1>
                             {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => {
-                                if (item !== '') {
+                                if (item !== ' ') {
                                     return (<h1 key={index}>pickup {index + 1}: {item}</h1>)
                                 }
                              })
