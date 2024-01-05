@@ -45,7 +45,7 @@ const RenderProfile = ({
             console.log('data_ 45', data_ , (data_.data)?.all_pickup);
             if ((data_.data)?.all_pickup) {
                 pickavd = (data_.data)?.all_pickup?.split(',');
-                coo
+                
                 if (pickavd.join('').replace(/\s/g, '') === '')  {
                    pickavd = ['No Have Pickavd']
                 }
