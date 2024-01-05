@@ -53,7 +53,6 @@ const RenderProfile = ({
                 }
             }
 
-            console.log('data_ 45', data_);
             setData({
                 sedePerteneciente: (data_.sede).slice(0, 3),
                 img_profile:  data_.img,
@@ -79,7 +78,7 @@ const RenderProfile = ({
                         <div>
                             <h1>{data.nombreUsuario}</h1>
                             {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => (
-                                <h1 key={index}>{item}</h1>
+                                <h1 key={index}>pickup{index + 1}: {item}</h1>
                             ))
                             }
                         </div>
