@@ -77,9 +77,11 @@ const RenderProfile = ({
                         <img  className="profile" src={data.img_profile} alt="profile" />
                         <div>
                             <h1>{data.nombreUsuario}</h1>
-                            {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => (
-                                <h1 key={index}>pickup{index + 1}: {item}</h1>
-                            ))
+                            {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => {
+                                if (item !== '') {
+                                    return (<h1 key={index}>pickup {index + 1}: {item}</h1>)
+                                }
+                             })
                             }
                         </div>
                     </div>
