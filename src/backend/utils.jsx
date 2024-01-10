@@ -32,7 +32,7 @@ const getData = async (hojaCalculo) => {
 const getDataLoggued = async () => {
 
     try {
-      const data_1 = await getData(`Full DATA`);
+      const data_1 = await getData(`FullData`);
       const teachers = await getData('TEACHERS');
      
       data_1.data = data_1.data.map ((item) => {
