@@ -95,7 +95,8 @@ const Header = () => {
                      sx={{
                         backgroundColor: 'var(--color-radiu-primary)',
                         height: '3em',
-                        display: "none"
+                        visibility: 'hidden',
+                        opacity: 0
                      }} 
                      variant="contained"> Add New Stundent</Button>
             </header>
