@@ -434,7 +434,6 @@ div._stundent h1 {
 
 ._profile_data_:first-child h1 { 
     font-size: 20px;
-    text-transform: lowercase;
     font-weight: 300;
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;

@@ -91,12 +91,13 @@ const Header = () => {
                     </div>
                     }
                 </div>
-                {/* <Button 
+                <Button 
                      sx={{
                         backgroundColor: 'var(--color-radiu-primary)',
                         height: '3em',
+                        display: "none"
                      }} 
-                     variant="contained"> Add New Stundent</Button> */}
+                     variant="contained"> Add New Stundent</Button>
             </header>
         </>
     )
