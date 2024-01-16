@@ -76,7 +76,7 @@ const RenderProfile = ({
                             <h1>{data.nombreUsuario}</h1>
                             {data.aprovadeUser && (data.aprovadeUser)?.map((item, index) => {
                                 if (item !== ' ') {
-                                    return (<h1 key={index}>pickup {index + 1}: {item}</h1>)
+                                    return (<h1 key={index}>Pickup {index + 1}: {item}</h1>)
                                 }
                              })
                             }
