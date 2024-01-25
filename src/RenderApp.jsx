@@ -13,7 +13,9 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Login from './components/Home/Login';
 
-
+/**
+ * Routes Logged in.
+*/
 const RenderRoutes = () => {
      return (
       <Router>
@@ -26,14 +28,16 @@ const RenderRoutes = () => {
      )
 }
 
-
+/**
+ * Render Routes login or not logged in
+*/
 export default function RenderApp() {
 
   const [ islogged, setIslogged ] = React.useState(false);
   const [ data, setData ] = React.useState({});
   const [ isLoad, setIsLoad ] = React.useState(true);
 
-
+  // Verify if there is a log and extract the data.
   React.useEffect(() => {
     
     const token = Cookies.get('token');

@@ -18,7 +18,6 @@ const RenderProfile = ({
         aprovadeUser: ['No Have Pickavd']
     });
 
-
     React.useEffect(() => {
         setData({
             sedePerteneciente: sedePerteneciente,
@@ -29,11 +28,10 @@ const RenderProfile = ({
 
     },
     [ sedePerteneciente, 
-        img_profile, 
-        nombreUsuario, 
-        cursosAsignados
+      img_profile, 
+      nombreUsuario, 
+      cursosAsignados
     ]);
-
 
     React.useEffect(() => {
         
@@ -42,6 +40,7 @@ const RenderProfile = ({
         if (window.sessionStorage.hasOwnProperty('data_stundent')) {
             let data_ = JSON.parse(data);
             let pickavd  = ['No Have Pickavd']
+            // Extract Information pickavd
             if ((data_.data)?.all_pickup) {
                 pickavd = (data_.data)?.all_pickup?.split(',');
                 
@@ -63,7 +62,6 @@ const RenderProfile = ({
         window.scrollTo(0, 0);
 
     }, []);
-
 
     //render
     return (

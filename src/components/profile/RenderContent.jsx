@@ -14,38 +14,22 @@ const RenderContent = ({
     const [ data , setData ] = React.useState({
             first_part: [
                 {
-                title: "Personal Information",
-                name: 'Juan',
-                apellido: 'Pérez',
-                email: 'juanperez@example.com',
-                edad: 25,
-                telefono: '555-1234',
-                },
-                {
-                title: "Personal Information",
-                name: 'María',
-                apellido: 'González',
-                email: 'mariagonzalez@example.com',
-                edad: 30,
-                telefono: '555-5678',
-                },
+                title: "",
+                name: '',
+                apellido: '',
+                email: '',
+                edad: 0,
+                telefono: '',
+                }
             ],
             second_part: [
                 {
-                title: "Personal Information",
-                name: 'John',
-                apellido: 'Doe',
-                email: 'johndoe@example.com',
-                edad: 28,
-                telefono: '555-4321',
-                },
-                {
-                title: "Personal Information",
-                name: 'Jane',
-                apellido: 'Doe',
-                email: 'janedoe@example.com',
-                edad: 35,
-                telefono: '555-8765',
+                    title: "",
+                    name: '',
+                    apellido: '',
+                    email: '',
+                    edad: 0,
+                    telefono: '',
                 },
             ]
     });

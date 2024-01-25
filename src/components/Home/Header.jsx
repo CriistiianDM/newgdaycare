@@ -39,8 +39,7 @@ const Header = () => {
         }
 
         setSearch(true);
-        setData(find);
-       
+        setData(find); 
     }
 
     const mouseLeave = () => {

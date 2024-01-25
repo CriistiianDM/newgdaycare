@@ -6,7 +6,6 @@ import { getData , getDataLoggued } from '../../backend/utils';
 const _get_auth = async (setData, setInfo , loader) => {
     
         try {
-            // console.log('google', google);
             google.accounts.id.initialize({
             client_id: '637920236611-gg7f17406ioeeae5mgbi4bm644q9trhe.apps.googleusercontent.com',
             callback: (response) => handleCredentialResponse( response,  setData, setInfo, loader)})
@@ -25,7 +24,6 @@ const _get_auth = async (setData, setInfo , loader) => {
 
 }
 
-
 const have_permision = ({
     data,
     dataToken
@@ -41,7 +39,6 @@ const have_permision = ({
     }
 
 }
-
 
 const handleCredentialResponse = async ( response, setIsLogin, setData, loader ) => {
 

@@ -32,36 +32,36 @@ const CardCourse = ({
     return (
         <>
             {data?.map((group , index__) => (
-                        <React.Fragment key={group.id}>
-                        <div>
-                            <div className='_title_sede'>
-                                <h1>{group.title}</h1>
+                <React.Fragment key={group.id}>
+                <div>
+                    <div className='_title_sede'>
+                        <h1>{group.title}</h1>
+                    </div>
+                    <div className='_container_courses'> 
+                    {group.courses.map((course) => (
+                        <div onClick={() => handleViewStundents(index__,course.title)} 
+                            className='_course' key={course.id}>
+                            <div className='_container_img_'>
+                                <img src={course.img} alt='_' />
                             </div>
-                            <div className='_container_courses'> 
-                            {group.courses.map((course) => (
-                                <div onClick={() => handleViewStundents(index__,course.title)} 
-                                    className='_course' key={course.id}>
-                                    <div className='_container_img_'>
-                                        <img src={course.img} alt='_' />
-                                    </div>
-                                    <h1>{course.title}</h1>
-                                    <div className='_actions'>
-                                        <Button
-                                            sx={{
-                                                backgroundColor: 'var(--color-bg-button-primary)',
-                                                height: '3em',
-                                                color: 'var(--color-text-button-primary)',
-                                                ':hover': {
-                                                    backgroundColor: 'var(--color-bg-button-primary)',
-                                                }
-                                            }}
-                                            variant="contained"> View Stundents</Button>
-                                    </div>
-                                </div>
-                            ))}
+                            <h1>{course.title}</h1>
+                            <div className='_actions'>
+                                <Button
+                                    sx={{
+                                        backgroundColor: 'var(--color-bg-button-primary)',
+                                        height: '3em',
+                                        color: 'var(--color-text-button-primary)',
+                                        ':hover': {
+                                            backgroundColor: 'var(--color-bg-button-primary)',
+                                        }
+                                    }}
+                                    variant="contained"> View Stundents</Button>
                             </div>
                         </div>
-                        </React.Fragment>
+                    ))}
+                    </div>
+                </div>
+                </React.Fragment>
             ))}
         </>
     )

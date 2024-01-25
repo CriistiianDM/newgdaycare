@@ -10,13 +10,10 @@ if (!data_section && !regex.test(data_section)) {
     console.log('No se ha cargado la información de los estudiantes');
 }
 
-const RoutesGeneral = () => {
-  return (
-   <></>
-  );
-};
-
-
+/**
+ * Get Data courses
+ * @returns [{}]
+ */
 const getSedesCourses = () => {
       let data_section = sessionStorage.getItem('data');
   
@@ -25,19 +22,16 @@ const getSedesCourses = () => {
           //sacar los grupos de cada sede
           let aux_data = [];
           let img_index = 0;
-          let data_sede = data_?.map( (element,index) => {
-        
+          let data_sede = data_?.map((element,index) => {
           return {
               id: index,
               title: `NG ${index + 1}`,
               courses: element?.filter((group, index, arr) => {
-                          
-                          if (!aux_data.includes(group[NAME_SEDE_KEY]) &&
-                              group[NAME_SEDE_KEY] !== '') {
-                                aux_data.push(group[NAME_SEDE_KEY]);
-                                return 1;
-                          }
-
+                  if (!aux_data.includes(group[NAME_SEDE_KEY]) &&
+                      group[NAME_SEDE_KEY] !== '') {
+                        aux_data.push(group[NAME_SEDE_KEY]);
+                        return 1;
+                  }
               }).map((group, index, arr) => {
                 
                 if (img_index <= 5) {
@@ -54,13 +48,10 @@ const getSedesCourses = () => {
                 }
 
               })
-
           }
-
         })
 
         return data_sede; 
-        
       }
 }
 
@@ -69,7 +60,6 @@ const getStundentsBySede = ({
   sede = 0,
   homeroom = ''
 }) => {
-
   try {
       let data_section = sessionStorage.getItem('data');
       let dataTeacher_section = sessionStorage.getItem('teachers');
@@ -88,32 +78,27 @@ const getStundentsBySede = ({
             }
       })
 
-
       return {  
            stundents: data,
            title: homeroom, 
            dataTeacher: dataTeacher_
       };
-
   }
   catch (error) {
        console.log(error);
   }
-
 }
 
 const getHeadquarters = () => {
-
     return [
         {
             id: 1,
             name: 'Bogotá',
         }
     ]
-
 }
 
-export default RoutesGeneral;
+// Export Module
 export { getHeadquarters, 
          getSedesCourses,
          getStundentsBySede
