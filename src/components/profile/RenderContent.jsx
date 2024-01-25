@@ -5,7 +5,10 @@ import {
 } from '@mui/material';
 
 
-//components
+/**
+ * @todo: Volverlo hacer con buenas praticas.
+ * components
+*/
 const RenderContent = ({
     data_content,
 }) => {
