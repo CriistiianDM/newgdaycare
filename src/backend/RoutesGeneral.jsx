@@ -57,17 +57,6 @@ const getSedesCourses = () => {
             img: `/assets/course/${img_index}.png`,
             id: index
           }
-          // console.log(index);
-          // if (img_index <= 5) {
-          //   img_index++;
-
-          // }
-          // else {
-          //   img_index = 1;
-          // }
-
-
-
         })
       }
     })
