@@ -18,7 +18,7 @@ function Login({
         />
         <div id="container_login" className="_conatiner_login">
         <div className="_logo_google">
-            <img src="/assets/_root/google.webp"  alt="google" />
+            <img src="google.webp"  alt="google" />
         </div>
         <h1>Sign in to your Google account</h1>
         <div id="btn-actions-google_" className="_actions">

@@ -22,6 +22,7 @@ const CardCourse = ({
             sede: sede,
             homeroom: classroom
         });
+
     }
 
 
