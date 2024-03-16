@@ -24,15 +24,15 @@ const getSedesCourses = () => {
     let img_index = 0;
 
     const imgIndex = {
-      '1': 'Jellyfish',
-      '2': 'Dandy',
-      '3': 'Lobster',
-      '4': 'Safari',
-      '5': 'Jungle',
-      '6': 'Forest',
-      '7': 'After',
-      
-    }
+      'Joyful': '1',
+      'Dandy': '2',
+      'Little': '3',
+      'Safari': '4',
+      'Jungle': '5',
+      'Forest': '6',
+      'After': '7'
+    },
+    regex = /-(.*?)\s/
 
     let data_sede = data_?.map((element, index) => {
       return {
@@ -45,10 +45,9 @@ const getSedesCourses = () => {
             return 1;
           }
         }).map((group, index, arr) => {
-          
           return {
             title: group[NAME_SEDE_KEY],
-            img: `/assets/course/${Object.keys(imgIndex[group.homeroom[index]])}.png`,
+            img: `/assets/course/${Object.values(imgIndex[(group.homeroom).match(regex)[1]])[0]}.png`,
             id: index
           }
         })
