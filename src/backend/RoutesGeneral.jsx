@@ -33,7 +33,8 @@ const getSedesCourses = () => {
             return 1;
           }
         }).map((group, index, arr) => {
-
+          
+          //Relaciona cada imagen con el nombre del curso
           const imgIndex = {
             '1': 'Jellyfish',
             '2': 'Dandy',
@@ -44,7 +45,7 @@ const getSedesCourses = () => {
             '7': 'After',
             
           }
-
+          //Se establece img_index correspondiente a la imagen de cada curso 
           for (let element in imgIndex) {
             
             if (!group.homeroom.includes(imgIndex[element])) continue;
