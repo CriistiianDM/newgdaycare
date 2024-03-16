@@ -22,6 +22,18 @@ const getSedesCourses = () => {
     //sacar los grupos de cada sede
     let aux_data = [];
     let img_index = 0;
+
+    const imgIndex = {
+      '1': 'Jellyfish',
+      '2': 'Dandy',
+      '3': 'Lobster',
+      '4': 'Safari',
+      '5': 'Jungle',
+      '6': 'Forest',
+      '7': 'After',
+      
+    }
+
     let data_sede = data_?.map((element, index) => {
       return {
         id: index,
@@ -34,28 +46,9 @@ const getSedesCourses = () => {
           }
         }).map((group, index, arr) => {
           
-          //Relaciona cada imagen con el nombre del curso
-          const imgIndex = {
-            '1': 'Jellyfish',
-            '2': 'Dandy',
-            '3': 'Lobster',
-            '4': 'Safari',
-            '5': 'Jungle',
-            '6': 'Forest',
-            '7': 'After',
-            
-          }
-          //Se establece img_index correspondiente a la imagen de cada curso 
-          for (let element in imgIndex) {
-            
-            if (!group.homeroom.includes(imgIndex[element])) continue;
-            
-            img_index = element
-          }
-          
           return {
             title: group[NAME_SEDE_KEY],
-            img: `/assets/course/${img_index}.png`,
+            img: `/assets/course/${Object.keys(imgIndex[group.homeroom[index]])}.png`,
             id: index
           }
         })
